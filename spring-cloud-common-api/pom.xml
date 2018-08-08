@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>spring-cloud-common-api</artifactId>
+	<packaging>jar</packaging>
+
+	<name>spring-cloud-common-api</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>com.jcfc</groupId>
+		<artifactId>spring-cloud-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<properties>
+		<!--打包、安装时跳过测试-->
+		<skipTests>true</skipTests>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+
+	<!--
+		被别人依赖的SpringBoot应用不要引入spring-boot-maven-plugin插件，
+		这样在编译的时候此模块会打成一个普通的jar包，而不是SpringBoot的可执行jar形式（这种形式的jar会导致引用它的项目无法找到依赖）
+	-->
+	<!--<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId></artifactId>
+				<configuration>
+					<classifier>exec</classifier>	&lt;!&ndash;可以生成不含依赖包的不可执行Jar包 &ndash;&gt;
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>-->
+
+</project>
