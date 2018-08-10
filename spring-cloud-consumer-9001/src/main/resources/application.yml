@@ -1,2 +1,15 @@
 server:
   port: 9001
+
+spring:
+  application:
+    name: consumer-9001
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: consumer-9001
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/

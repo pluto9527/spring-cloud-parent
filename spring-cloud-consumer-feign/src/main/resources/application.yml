@@ -1,0 +1,20 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: consumer-9002
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: consumer-9002
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
+
+# 使用aop方式的服务降级必须开启
+feign:
+  hystrix:
+    enabled: true

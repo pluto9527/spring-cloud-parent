@@ -1,0 +1,28 @@
+server:
+  port: 10000
+
+spring:
+  application:
+    name: zuul-gateway
+
+# zuul也是一个微服务，需要注册进Eureka中
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: zuul-gateway-10000
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
+
+# 默认通过 网关ip：端口/服务名/接口方法访问 http://localhost:10000/provider/dept/list
+# 添加服务映射，并隐藏真实服务名
+zuul:
+  # 服务访问前缀
+  prefix: /jcfc
+  # "*"所有服务都隐藏原服务名访问权限，也可以写单个服务名
+  ignored-services: "*"
+  # 服务名映射
+  routes:
+    mydept.serviceId: provider
+    mydept.path: /mydept/**
+

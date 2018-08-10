@@ -1,17 +1,17 @@
 server:
-  port: 8001
+  port: 8003
 
 eureka:
   instance:
     prefer-ip-address: true   #访问路径可以显示IP地址
-    instance-id: provider-8001  #自定义服务实例名称
+    instance-id: provider-8003  #自定义服务名称
   client:
       service-url:
         defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
 
 spring:
   application:
-    name: provider  #服务名称
+    name: provider
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
@@ -28,5 +28,5 @@ mybatis:
     #map-underscore-to-camel-case: true
 
 info:
-  app.name: provider-8001
+  app.name: provider-8003
   app.description: dept
