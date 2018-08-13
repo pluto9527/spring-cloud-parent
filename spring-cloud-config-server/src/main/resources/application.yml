@@ -1,0 +1,10 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/pluto9527/spring-cloud-parent.git #配置文件所在github仓库的地址
