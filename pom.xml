@@ -106,6 +106,7 @@
 		<module>spring-cloud-provider-hystrix</module>
 		<module>spring-cloud-zuul-gateway</module>
 		<module>spring-cloud-config-server</module>
+		<module>spring-cloud-config-client</module>
 	</modules>
 
 </project>

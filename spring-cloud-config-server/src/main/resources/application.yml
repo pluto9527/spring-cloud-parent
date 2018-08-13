@@ -1,5 +1,8 @@
+# 启动应用访问 http://localhost:3344/application-dev.yml
+
 server:
   port: 3344
+
 spring:
   application:
     name: config-server
