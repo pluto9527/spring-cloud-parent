@@ -3,6 +3,6 @@ spring:
   cloud:
     config:
       name: config-client # github仓库配置文件名，注意没有.yml
-      profile: dev  # 激活配置文件的环境
+      profile: test  # 激活配置文件的环境
       label: master
       uri: http://localhost:3344  #配置config-server端地址，client端启动后通过config-server找到github,获取配置文件
